@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { ReposComponent } from './modules/general/repos/repos.component';
 import { CommitComponent } from './modules/general/commits/commits.component';
 import { AppRoutingModule } from './app-routing.module';
-import { httpInterceptorProviders } from './http-interceptors-provider';
+// import { httpInterceptorProviders } from './http-interceptors-provider'; // for intercepting any api call for setting headers etc.
 import { NgbModule }
 from '@ng-bootstrap/ng-bootstrap';
 

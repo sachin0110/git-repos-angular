@@ -1,10 +1,5 @@
-import {   Component,
-  ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { CommitData } from 'data/commit-data';
-import { Octokit } from "@octokit/core";
 
 import { GitService } from '../../../services/git.service';
 
@@ -21,14 +16,11 @@ export class CommitComponent implements OnInit {
   commitData: Array<any> = [];
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private _gitService: GitService) { }
 
-  // ngOnInit(): void {
-  // }
   ngOnInit() {
     this.errorMessage = '';
     this.route.params.subscribe((params: Params) => {
       
       this.repoId = params['repoId'];
-      console.log(this.repoId);
       this.getCommitsOfRepo(this.repoId);
     });
   }

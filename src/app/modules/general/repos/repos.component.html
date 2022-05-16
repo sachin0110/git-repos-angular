@@ -8,7 +8,7 @@
   </span>
 </div>
 <br/>
-<table class="table">
+<table class="table" *ngIf="errorMessage === ''">
     <thead>
       <tr>
         <th scope="col">Repo Name</th>
@@ -26,3 +26,6 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="errorMessage !=''">
+    {{errorMessage}}  
+  </div>

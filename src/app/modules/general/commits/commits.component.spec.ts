@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommitComponent } from './commits.component';
 
-describe('AboutComponent', () => {
+describe('CommitComponent', () => {
   let component: CommitComponent;
   let fixture: ComponentFixture<CommitComponent>;
 
