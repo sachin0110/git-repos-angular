@@ -1,0 +1,28 @@
+<h1> Repos on basis of query: {{searchText}} </h1>
+<div class="input-group">
+  <input class="form-control border-end-0 border rounded-pill" [(ngModel)]="searchText" type="text" value="search" id="example-search-input">
+  <span class="input-group-append">
+      <button (click)="getRepos(searchText)" class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+          <i class="fa fa-search"></i>
+      </button>
+  </span>
+</div>
+<br/>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Repo Name</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Repo Creation Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repo of reposData" (click)="navigateToCommits(repo.full_name)">
+        <th scope="row">{{repo.name}}</th>
+        <td>
+            <img src={{repo.owner.avatar_url}} />
+        </td>
+        <td>{{repo.created_at | date: 'medium'}}</td>
+      </tr>
+    </tbody>
+  </table>

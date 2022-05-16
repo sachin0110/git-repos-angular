@@ -1,0 +1,27 @@
+<h1> Commits associated with: {{repoId}} </h1>
+
+<table class="table" *ngIf="commitData.length>0">
+  <thead>
+    <tr>
+      <th scope="col">Author Name</th>
+      <th scope="col">URL</th>
+      <th scope="col">Commit Message</th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <tr *ngFor="let commit of commitData">
+      <th scope="row">{{commit.commit.author.name}}</th>
+      <td><a href="{{'/' + commit.commit.url }}"> {{commit.sha}} </a></td>
+      <td>{{commit.commit.message}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="errorMessage !=''">
+  {{errorMessage}}  
+</div>
+
+<div *ngIf="errorMessage === '' && (commitData === undefined || commitData.length === 0)">
+  No Commits found  
+</div>
